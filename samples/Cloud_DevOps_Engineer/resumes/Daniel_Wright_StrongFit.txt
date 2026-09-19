@@ -1,0 +1,27 @@
+Daniel Wright
+Portland, OR | daniel.wright@email.com | (503) 555-8812 | github.com/dwright-infra
+
+Summary:
+Lead Cloud & DevOps Engineer with 6+ years of expertise managing multi-region AWS infrastructure, automated Terraform deployments, and production Kubernetes (EKS) clusters.
+
+Skills:
+AWS (EKS, ECS, VPC, IAM, RDS, Route53, CloudWatch), Terraform, Kubernetes, Docker, Helm, GitHub Actions, Jenkins, Python, Bash, Prometheus, Grafana, Datadog, ArgoCD.
+
+Experience:
+Lead DevOps Engineer | CloudScale Systems (2021 - Present)
+- Authored modular Terraform code managing multi-region AWS infrastructure with 99.99% availability for 40+ microservices.
+- Managed 12-node AWS EKS Kubernetes clusters with Karpenter GPU/CPU autoscaling, cutting cloud spend by $180,000 annually.
+- Architected GitOps deployment pipeline using GitHub Actions, Helm, and ArgoCD with automated security scanning (Trivy, SonarQube).
+- Built comprehensive observability framework using Prometheus, Grafana, and OpenTelemetry with automated PagerDuty incident routing.
+
+DevOps & SRE Engineer | Apex Platform Labs (2018 - 2021)
+- Migrated legacy on-premise infrastructure to AWS utilizing Terraform and Docker containers.
+- Reduced build and deployment times by 65% through parallelized Jenkins and GitHub Actions workflows.
+- Implemented centralized logging using AWS OpenSearch and FluentBit.
+
+Education:
+B.S. in Computer Science | Oregon State University (2018)
+
+Certifications:
+AWS Certified Solutions Architect - Professional (2023)
+Certified Kubernetes Administrator (CKA, 2022)

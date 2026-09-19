@@ -1,0 +1,23 @@
+Kevin Zhang
+Seattle, WA | kevin.z@email.com | (206) 555-9011 | github.com/kevinz-fullstack
+
+Summary:
+Senior Full Stack Engineer with 5+ years of experience architecting high-traffic SaaS applications using React, TypeScript, Next.js, Node.js, and PostgreSQL on AWS.
+
+Skills:
+React, TypeScript, Next.js, Tailwind CSS, Zustand, Node.js, Express, Python (FastAPI), PostgreSQL, Redis, GraphQL, REST APIs, Docker, AWS (ECS, Lambda, S3, CloudFront), Jest, Playwright.
+
+Experience:
+Senior Full Stack Engineer | CloudPulse Technologies (2022 - Present)
+- Led frontend redesign of enterprise analytics portal using React 18, TypeScript, and Tailwind CSS, improving Lighthouse performance score from 62 to 96.
+- Architected high-throughput Node.js microservices handling 12,000 requests/sec with PostgreSQL and Redis caching.
+- Standardized GraphQL and RESTful API conventions across 4 engineering squads.
+- Implemented comprehensive automated test suite in Playwright and Jest, achieving 91% code coverage in CI/CD pipeline.
+
+Full Stack Developer | Nimbus Interactive (2019 - 2022)
+- Built customer-facing e-commerce application in React, Redux, and Python (Django/FastAPI).
+- Optimized complex SQL queries and indexing in PostgreSQL, reducing average checkout response time by 42%.
+- Containerized entire application stack with Docker Compose and deployed to AWS ECS.
+
+Education:
+B.S. in Computer Science | University of Washington (2019)

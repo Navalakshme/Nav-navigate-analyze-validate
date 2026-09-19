@@ -1,0 +1,24 @@
+Carlos Mendez
+Miami, FL | carlos.mendez@email.com | (305) 555-6677 | github.com/carlosm-ai
+
+Summary:
+AI Engineer with 4 years of experience building and deploying machine learning models in Python. Passionate about scalable artificial intelligence and deep neural networks.
+
+Skills:
+Python, PyTorch, TensorFlow, Scikit-learn, SQL, Docker, Kubernetes, AWS, Cloud Computing, REST APIs, Git, Linux.
+
+Experience:
+AI Developer | Apex Global Solutions (2022 - Present)
+- Developed machine learning models in Python and PyTorch for financial risk assessment.
+- Deployed deep learning models to production handling high volume of traffic.
+- Worked with cloud infrastructure on AWS for running training workloads and microservices.
+- Utilized Docker containers and Kubernetes for application management.
+- Collaborated with cross-functional teams to improve product features and user experience.
+
+Software Developer | InnovateX Labs (2020 - 2022)
+- Built backend REST APIs in Python using Flask and connected to PostgreSQL database.
+- Implemented data preprocessing algorithms and machine learning feature extraction.
+- Participated in agile sprints, daily standups, and code reviews.
+
+Education:
+B.S. in Computer Information Systems | Florida International University (2020)

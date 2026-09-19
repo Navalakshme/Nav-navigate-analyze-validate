@@ -1,0 +1,23 @@
+Tariq Al-Mansoor
+New York, NY | tariq.mansoor@email.com | (212) 555-8890 | github.com/tariq-nlp
+
+Summary:
+Machine Learning Engineer with 4+ years of specialized experience in Natural Language Processing (NLP), LLM fine-tuning, and scalable inference infrastructure on AWS and Kubernetes.
+
+Skills:
+Python, PyTorch, HuggingFace, LangChain, LlamaIndex, vLLM, TensorRT-LLM, AWS (SageMaker, EKS, ECS, S3), Docker, Kubernetes, Pinecone, Qdrant, SQL, PostgreSQL, MLflow.
+
+Experience:
+Machine Learning Engineer | CohereScale AI (2022 - Present)
+- Architected generative AI search pipeline combining LangChain, Pinecone vector database, and fine-tuned Llama-3 models on AWS EKS.
+- Optimized multi-GPU LLM inference using vLLM and TensorRT-LLM, reducing latency by 45% and memory footprint by 30%.
+- Established automated model evaluation framework tracking perplexity, hallucination metrics, and response times in MLflow.
+- Wrote robust PostgreSQL database schemas and complex analytical SQL queries for conversational audit logs.
+
+NLP Engineer | AlphaSearch Systems (2020 - 2022)
+- Developed BERT-based document classification and named-entity recognition models in PyTorch, deployed on AWS SageMaker endpoints.
+- Containerized NLP services with Docker and Kubernetes with automated horizontal pod autoscaling based on incoming request queues.
+
+Education:
+M.S. in Computer Science (AI Track) | Columbia University (2020)
+B.S. in Computer Science | NYU (2018)

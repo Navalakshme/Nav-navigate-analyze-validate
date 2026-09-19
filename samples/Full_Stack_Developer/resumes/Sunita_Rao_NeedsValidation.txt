@@ -1,0 +1,23 @@
+Sunita Rao
+Bangalore, India | sunita.rao@email.com | +91 91234 56780 | linkedin.com/in/sunita-rao-dev
+
+Summary:
+Full Stack Software Developer with 4 years of experience delivering web solutions using React, Node.js, and SQL. Passionate about building modern user interfaces.
+
+Skills:
+React, Node.js, Express, JavaScript, TypeScript, SQL, PostgreSQL, MongoDB, HTML, CSS, REST APIs, Git.
+
+Experience:
+Full Stack Developer | TechVanguard Pvt Ltd (2021 - Present)
+- Developed various modules of web application using React and TypeScript.
+- Implemented backend APIs using Node.js and Express to communicate with database.
+- Designed SQL tables and wrote queries in PostgreSQL for data management.
+- Worked on improving UI responsiveness and addressing security vulnerabilities.
+
+Software Engineer | AlphaSoft Corp (2020 - 2021)
+- Built frontend components using React and styled components.
+- Maintained backend RESTful endpoints in Node.js.
+- Participated in daily stand-up meetings and sprint reviews.
+
+Education:
+B.Tech in Computer Science | SRM University (2020)

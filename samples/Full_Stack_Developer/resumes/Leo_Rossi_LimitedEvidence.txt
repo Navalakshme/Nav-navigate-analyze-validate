@@ -1,0 +1,21 @@
+Leo Rossi
+Chicago, IL | leo.rossi@email.com | (312) 555-8744 | github.com/leorossi-web
+
+Summary:
+Junior Frontend Developer with 1.5 years of experience creating responsive web pages in React and JavaScript. Eager to expand full stack capabilities.
+
+Skills:
+HTML5, CSS3, JavaScript, React, Tailwind CSS, Git, basic Node.js, basic SQL.
+
+Experience:
+Junior Frontend Developer | CreativePixels Agency (2023 - Present)
+- Developed interactive web components and marketing sites using React and Tailwind CSS.
+- Translated Figma design prototypes into mobile-responsive web pages.
+- Collaborated with senior developers to integrate REST endpoints.
+
+Web Development Intern | TechSprint Labs (Summer 2022)
+- Built interactive dashboard widgets in React.
+- Fixed UI layout bugs across mobile and desktop browsers.
+
+Education:
+B.S. in Web Design & Interactive Media | DePaul University (2023)

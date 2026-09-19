@@ -1,0 +1,23 @@
+David Kim
+San Jose, CA | david.kim@email.com | (408) 555-7821 | github.com/dkim-vision
+
+Summary:
+Lead ML Systems Engineer with 6 years of expertise building production computer vision and deep learning inference pipelines on AWS and Kubernetes.
+
+Skills:
+Python, C++, PyTorch, TensorRT, ONNX, OpenCV, CUDA, AWS (SageMaker, EKS, EC2 GPU, S3), Docker, Kubernetes, PostgreSQL, Kafka, MLflow, Helm.
+
+Experience:
+Lead Machine Learning Engineer | Visionary Robotics (2021 - Present)
+- Architected real-time object detection inference pipeline on AWS EKS using PyTorch and TensorRT, processing 60 FPS video streams from 1,200 connected devices.
+- Implemented automated canary deployment for ML models using Kubernetes and ArgoCD.
+- Built distributed training framework in PyTorch across multi-node AWS p4d GPU instances, cutting model training time from 72h to 14h.
+- Designed relational PostgreSQL metadata store and vector similarity lookup engine.
+
+Senior Computer Vision Engineer | Autonomous AI (2018 - 2021)
+- Developed lane detection and obstacle classification algorithms in PyTorch and deployed on embedded edge devices with ONNX Runtime.
+- Built data ingestion and curation workflows processing 5TB of driving imagery daily on AWS S3 and ECS.
+
+Education:
+M.S. in Electrical & Computer Engineering | Stanford University (2018)
+B.S. in Computer Science | Carnegie Mellon University (2016)

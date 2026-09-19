@@ -1,0 +1,22 @@
+Rachel Adams
+Raleigh, NC | rachel.a@email.com | (919) 555-4309 | linkedin.com/in/racheladams-eng
+
+Summary:
+Full Stack Software Engineer with 3.5 years of experience developing web applications with React, Node.js, and cloud deployments.
+
+Skills:
+React, Node.js, TypeScript, JavaScript, SQL, PostgreSQL, AWS, Docker, REST APIs, Git, CSS.
+
+Experience:
+Full Stack Engineer | Apex Cloud Solutions (2022 - Present)
+- Built frontend features in React and TypeScript for enterprise customers.
+- Developed backend REST APIs using Node.js and PostgreSQL.
+- Handled deployments to AWS cloud infrastructure and managed Docker containers.
+- Collaborated with QA team on regression testing and bug fixes.
+
+Junior Developer | Trinity Tech (2021 - 2022)
+- Built interactive forms and pages using React and CSS.
+- Assisted in maintaining backend services and SQL database scripts.
+
+Education:
+B.S. in Computer Science | North Carolina State University (2021)

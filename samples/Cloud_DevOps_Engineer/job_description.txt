@@ -1,0 +1,28 @@
+Job Title: Senior Cloud & DevOps Engineer
+Department: Infrastructure & Platform Security
+Location: Remote / Hybrid
+Employment Type: Full-Time
+
+About the Role:
+We are looking for a Senior Cloud & DevOps Engineer to design, scale, and secure our multi-region cloud infrastructure on AWS. You will champion Infrastructure as Code (IaC), build automated CI/CD release pipelines, manage Kubernetes production clusters, and establish robust observability and incident response systems.
+
+Required Qualifications:
+- 4+ years of dedicated DevOps, Site Reliability, or Cloud Infrastructure experience.
+- Expert proficiency in AWS core services (EKS, ECS, VPC, IAM, Route53, RDS, CloudFront).
+- Advanced expertise in Infrastructure as Code using Terraform or AWS CloudFormation.
+- Production experience containerizing and orchestrating services with Docker and Kubernetes.
+- Strong knowledge of CI/CD pipelines (GitHub Actions, GitLab CI, or Jenkins).
+- Scripting proficiency in Python or Bash for systems automation.
+- Bachelor's degree in Computer Science, Systems Engineering, or equivalent experience.
+
+Preferred Qualifications:
+- AWS Certified Solutions Architect - Professional or DevOps Engineer - Professional.
+- Certified Kubernetes Administrator (CKA).
+- Experience managing observability stacks (Prometheus, Grafana, Datadog, ELK/OpenSearch).
+- Experience with zero-trust security and SOC 2 / ISO 27001 compliance automation.
+
+Responsibilities:
+- Build, optimize, and maintain multi-region AWS cloud infrastructure using Terraform.
+- Oversee Kubernetes (EKS) cluster management, node autoscaling, and zero-downtime upgrades.
+- Design resilient CI/CD pipelines delivering automated testing, security scanning, and deployments.
+- Implement observability, alerting, and automated incident response runbooks.

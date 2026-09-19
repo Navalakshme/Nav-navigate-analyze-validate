@@ -1,0 +1,22 @@
+Ethan Brooks
+Austin, TX | ethan.brooks@email.com | (512) 555-4389 | github.com/ethanb-dev
+
+Summary:
+Senior Full Stack Software Engineer with 6 years of expertise delivering enterprise cloud applications with React, TypeScript, Node.js, and PostgreSQL.
+
+Skills:
+React, TypeScript, Next.js, Redux, Zustand, Node.js, Express, NestJS, PostgreSQL, Redis, Docker, Kubernetes, AWS, GraphQL, REST, Tailwind CSS, Cypress.
+
+Experience:
+Staff Full Stack Engineer | Apex SaaS Labs (2021 - Present)
+- Spearheaded frontend architecture of multi-tenant enterprise portal using Next.js, React, and TypeScript, reducing initial bundle size by 38%.
+- Designed microservices in NestJS and Node.js with PostgreSQL and Redis, delivering sub-50ms API response times.
+- Managed Kubernetes deployment pipelines and Docker containers across staging and production clusters on AWS.
+- Mentored 6 junior and mid-level software engineers on TypeScript design patterns and clean architecture.
+
+Full Stack Engineer | VentureByte Technologies (2018 - 2021)
+- Created responsive web interfaces in React and Redux with automated Cypress tests.
+- Designed database schemas, indexing, and stored procedures in PostgreSQL for high-volume transactions.
+
+Education:
+B.S. in Computer Science | University of Texas at Dallas (2018)

@@ -1,0 +1,22 @@
+Chloe Bennett
+Charlotte, NC | chloe.b@email.com | (704) 555-1299 | github.com/chloeb-cloud
+
+Summary:
+Systems Support Specialist with 2 years of IT experience transitioning into Cloud and DevOps. Recently earned AWS Cloud Practitioner certification.
+
+Skills:
+Linux, Bash, Git, Python (basic), AWS (EC2, S3, IAM basics), Docker (basic), Windows Server.
+
+Experience:
+IT Support Specialist | Financial First Corp (2022 - Present)
+- Provided tier 2 IT technical support, hardware troubleshooting, and Active Directory administration.
+- Wrote basic Bash scripts to automate employee onboarding workstation provisioning.
+- Managed user permissions in AWS IAM and monitored storage usage in Amazon S3.
+
+Help Desk Technician | TechCare Systems (2021 - 2022)
+- Resolved software configuration issues for 300+ local and remote employees.
+- Documented standard operating procedures and technical troubleshooting guides.
+
+Education:
+A.S. in Computer Information Systems | Central Piedmont Community College (2021)
+AWS Certified Cloud Practitioner (2023)

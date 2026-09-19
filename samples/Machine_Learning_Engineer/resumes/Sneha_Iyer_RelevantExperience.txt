@@ -1,0 +1,24 @@
+Sneha Iyer
+Seattle, WA | sneha.iyer@email.com | (206) 555-0144 | github.com/snehaiyer-dev
+
+Summary:
+Senior Backend & Platform Software Engineer with 4.5 years of experience architecting distributed cloud systems and microservices on AWS. Strong expertise in Python, SQL, and Docker containerization. Recently completed deep learning specialization and built internal LLM tooling.
+
+Skills:
+Python (FastAPI, Django), Go, PostgreSQL, DynamoDB, Redis, AWS (ECS, Lambda, SQS, SNS, S3, RDS), Docker, Kubernetes, SQL, PyTorch (foundational), HuggingFace Transformers, LangChain, FAISS.
+
+Experience:
+Senior Backend Engineer | DataBridge Systems (2022 - Present)
+- Designed and scaled event-driven data ingestion pipeline processing 50M events daily using Python, AWS Lambda, SQS, and PostgreSQL.
+- Implemented semantic document search microservice using LangChain, HuggingFace embeddings, and FAISS vector index, serving 500+ internal analysts.
+- Optimized PostgreSQL database schema and read-heavy queries, achieving 40% reduction in query latency.
+- Authored automated deployment pipelines using Docker and GitHub Actions for continuous delivery to AWS ECS.
+
+Software Engineer | NexaCloud Inc. (2020 - 2022)
+- Built enterprise REST APIs in Python using FastAPI and PostgreSQL.
+- Containerized legacy backend services with Docker and managed deployments to AWS cloud environments.
+- Maintained test suites with pytest achieving 88% unit and integration test coverage.
+
+Education:
+B.S. in Computer Engineering | University of Illinois Urbana-Champaign (2020)
+Deep Learning Specialization | DeepLearning.AI (2023)

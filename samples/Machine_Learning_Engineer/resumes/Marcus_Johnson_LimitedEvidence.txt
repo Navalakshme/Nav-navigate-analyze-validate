@@ -1,0 +1,20 @@
+Marcus Johnson
+Austin, TX | marcus.j@email.com | (512) 555-9012 | github.com/marcus-ml-dev
+
+Summary:
+Recent Computer Science graduate with strong academic foundation in algorithms, mathematics, and introductory machine learning. Seeking an entry-level machine learning opportunity.
+
+Skills:
+Python, Java, C, Scikit-learn, Pandas, Matplotlib, NumPy, Git, Linux, Jupyter Notebooks, basic Docker
+
+Academic Projects:
+Coursework Capstone: Sentiment Analysis on Movie Reviews
+- Developed an LSTM sentiment classifier in Python using PyTorch on Google Colab. Achieved 84% accuracy on IMDb dataset.
+Real Estate Price Estimator:
+- Constructed gradient boosted decision trees using Scikit-learn to forecast regional property values. Performed data cleaning and feature engineering in Jupyter.
+Database Management Final Project:
+- Implemented a student enrollment portal with MySQL backend and Python CLI interface.
+
+Education:
+B.S. in Computer Science | University of Texas at Austin (Graduated May 2024)
+Coursework: Machine Learning, Artificial Intelligence, Database Systems, Data Structures.

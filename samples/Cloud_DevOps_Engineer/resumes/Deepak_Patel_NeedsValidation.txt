@@ -1,0 +1,22 @@
+Deepak Patel
+Ahmedabad, India | deepak.patel@email.com | +91 98989 00112 | linkedin.com/in/deepak-patel-devops
+
+Summary:
+DevOps and Cloud Engineer with 3.5 years of experience in AWS infrastructure management, CI/CD pipelines, and server monitoring.
+
+Skills:
+AWS, Terraform, Docker, Kubernetes, Jenkins, Python, Bash, Linux, CloudWatch, Git.
+
+Experience:
+Cloud DevOps Engineer | Apex Global Services (2022 - Present)
+- Configured and deployed AWS cloud infrastructure using Terraform scripts.
+- Maintained Docker containers and Kubernetes clusters for client applications.
+- Created continuous integration and delivery pipelines using Jenkins and GitHub.
+- Configured monitoring dashboards in AWS CloudWatch and set up email alerts.
+
+Associate DevOps Engineer | Synergy Systems (2021 - 2022)
+- Assisted in building and deploying code releases across test environments.
+- Wrote Bash scripts for routine maintenance and automated server health checks.
+
+Education:
+B.Tech in Computer Engineering | Gujarat Technological University (2021)

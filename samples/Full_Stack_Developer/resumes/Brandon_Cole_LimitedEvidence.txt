@@ -1,0 +1,19 @@
+Brandon Cole
+Atlanta, GA | brandon.cole@email.com | (404) 555-6612 | github.com/bcole-code
+
+Summary:
+Motivated Full Stack Web Developer and recent coding bootcamp graduate. Skilled in React, JavaScript, Node.js, and PostgreSQL.
+
+Skills:
+React, JavaScript, Node.js, Express, PostgreSQL, HTML, CSS, Git, basic Docker.
+
+Projects:
+Full Stack Task Manager Application
+- Built task management web app using React, Node.js, Express, and PostgreSQL.
+- Implemented JWT authentication and protected API routes.
+E-Commerce Prototype
+- Created product catalog and shopping cart frontend in React with responsive CSS.
+
+Education:
+Full Stack Software Engineering Immersive | General Assembly (2024)
+B.A. in Communications | Georgia State University (2021)

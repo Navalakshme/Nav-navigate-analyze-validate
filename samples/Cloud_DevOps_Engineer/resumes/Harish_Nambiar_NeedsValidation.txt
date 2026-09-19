@@ -1,0 +1,22 @@
+Harish Nambiar
+Chennai, India | harish.nambiar@email.com | +91 94455 66778 | linkedin.com/in/harish-n-cloud
+
+Summary:
+Cloud & Infrastructure Engineer with 4 years of experience specializing in AWS, Docker, automation pipelines, and infrastructure monitoring.
+
+Skills:
+AWS, Docker, Kubernetes, Terraform, Jenkins, GitLab CI, Python, Bash, Nagios, Splunk.
+
+Experience:
+Cloud Engineer | Zenith Cloud Services (2021 - Present)
+- Worked on provisioning cloud resources on AWS using Terraform templates.
+- Managed Dockerized application containers and deployed to Kubernetes clusters.
+- Configured CI/CD automation pipelines using GitLab CI.
+- Handled incident management and root cause analysis for infrastructure alerts.
+
+Associate Systems Engineer | HCL Technologies (2020 - 2021)
+- Monitored cloud infrastructure and assisted in executing patch updates.
+- Automated server backup scripts using Bash.
+
+Education:
+B.Tech in Information Technology | Anna University (2020)

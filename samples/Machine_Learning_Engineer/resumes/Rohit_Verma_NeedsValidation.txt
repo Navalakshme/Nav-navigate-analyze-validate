@@ -1,0 +1,24 @@
+Rohit Verma
+Hyderabad, India | rohit.verma@email.com | +91 99887 76655 | linkedin.com/in/rohitv-ml
+
+Summary:
+Machine Learning Engineer with 3.5 years of experience in model development, data preprocessing, and MLOps on AWS. Skilled in Python, Scikit-learn, and Deep Learning.
+
+Skills:
+Python, SQL, PyTorch, Scikit-learn, AWS (SageMaker, S3, EC2), Docker, Kubernetes, MLflow, Git, Pandas, NumPy, FastAPI.
+
+Experience:
+ML Engineer | DataPulse Technologies (2022 - Present)
+- Built end-to-end machine learning solutions for enterprise clients using Python and PyTorch.
+- Responsible for MLOps and deploying models to AWS SageMaker endpoints.
+- Handled containerization using Docker and managed deployments on Kubernetes.
+- Wrote SQL queries for feature extraction from PostgreSQL databases.
+- Monitored model performance in production and assisted in retraining when needed.
+
+Junior Data Scientist | InnoTech Analytics (2021 - 2022)
+- Prepared datasets and conducted exploratory analysis using Pandas and Matplotlib.
+- Trained predictive models using Scikit-learn for customer risk scoring.
+- Assisted senior team members in testing PyTorch deep learning models.
+
+Education:
+B.Tech in Computer Science | BITS Pilani (2021)

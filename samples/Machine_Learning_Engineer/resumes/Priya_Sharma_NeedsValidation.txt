@@ -1,0 +1,28 @@
+Priya Sharma
+Bengaluru, India | priya.sharma@email.com | +91 98765 43210 | linkedin.com/in/priyasharma-ds
+
+Summary:
+Data Scientist & AI Consultant with 4 years of experience working with machine learning models and enterprise analytics. Experienced in Python, cloud technologies, and developing predictive models for retail clients.
+
+Skills:
+Python, R, SQL, Machine Learning, AWS, Deep Learning, Pandas, Scikit-learn, PyTorch, Docker, Tableau, Git
+
+Experience:
+Data Scientist | CloudScale Analytics (2021 - Present)
+- Worked on various client engagements developing machine learning algorithms for churn prediction and customer segmentation using Python and Scikit-learn.
+- Utilized AWS cloud services for model storage and data preparation.
+- Deployed machine learning models on AWS to support client web applications.
+- Collaborated with engineering teams to integrate analytics pipelines with backend databases using SQL.
+- Assisted in improving model accuracy and business metrics across multiple quarters.
+
+Associate Data Scientist | QuantMatrix Solutions (2020 - 2021)
+- Built exploratory data analysis workflows and feature engineering scripts using Python, Pandas, and SQL.
+- Created visualizations and dashboards in Tableau and Matplotlib for executive presentations.
+- Participated in testing and validating open-source deep learning models.
+
+Projects:
+Customer Lifetime Value Predictor: Built predictive regression model in Python and hosted simple API using Flask and Docker on AWS.
+Image Classification Classifier: Trained convolutional neural network using PyTorch on public benchmark dataset.
+
+Education:
+B.Tech in Information Technology | NIT Karnataka (2020)

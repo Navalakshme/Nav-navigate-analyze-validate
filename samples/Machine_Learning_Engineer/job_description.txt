@@ -1,0 +1,26 @@
+Job Title: Senior Machine Learning Engineer
+Department: AI & Platform Engineering
+Location: Remote / Hybrid
+Employment Type: Full-Time
+
+About the Role:
+We are looking for a Senior Machine Learning Engineer to architect, build, and deploy production ML systems and LLM applications. You will work on low-latency inference pipelines, automated model retraining, and retrieval-augmented generation (RAG) architectures serving millions of users.
+
+Required Qualifications:
+- 4+ years of production experience developing and deploying machine learning models.
+- Expert proficiency in Python, PyTorch or TensorFlow, and NumPy/Pandas.
+- Demonstrated experience deploying ML models to AWS (SageMaker, EKS, ECS, S3, CloudWatch).
+- Strong command of SQL and relational databases (PostgreSQL/MySQL).
+- Containerization and orchestration experience with Docker and Kubernetes.
+- Bachelor's or Master's degree in Computer Science, Data Science, or related quantitative field.
+
+Preferred Qualifications:
+- Experience with LLM orchestration (LangChain, LlamaIndex) and Vector Databases (Pinecone, Qdrant, Milvus).
+- Production MLOps experience with MLflow, Kubeflow, or Weights & Biases.
+- Experience with distributed model training and latency optimization (TensorRT, ONNX Runtime, Triton).
+
+Responsibilities:
+- Build, optimize, and maintain real-time and batch ML inference microservices.
+- Design automated training, validation, and model drift detection workflows.
+- Partner with product and data engineering teams to deploy performant AI features.
+- Ensure 99.9% uptime, data privacy compliance, and low inference latency SLAs.

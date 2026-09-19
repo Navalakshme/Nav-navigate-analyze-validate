@@ -1,0 +1,21 @@
+Sarah Jenkins
+Philadelphia, PA | sarah.j@email.com | (215) 555-8902 | github.com/sjenkins-dev
+
+Summary:
+Full Stack Web Engineer with 5 years of experience building web applications using PHP/Laravel and React. Recently expanded backend skills to Node.js and TypeScript.
+
+Skills:
+React, JavaScript, TypeScript, PHP, Laravel, Node.js, Express, MySQL, PostgreSQL, Docker, REST APIs, Tailwind CSS, HTML/CSS, Git.
+
+Experience:
+Full Stack Developer | MediaConnect Labs (2021 - Present)
+- Engineered responsive user interfaces in React and Tailwind CSS for multi-brand publishing platforms.
+- Migrated legacy PHP endpoints to modern Node.js and Express microservices.
+- Optimized MySQL and PostgreSQL databases with proper foreign keys and index structures.
+
+Web Developer | Keystone Digital (2019 - 2021)
+- Developed custom web applications in Laravel and Vue.js/React with MySQL databases.
+- Integrated third-party payment gateways and social authentication APIs.
+
+Education:
+B.S. in Information Systems | Temple University (2019)

@@ -1,0 +1,21 @@
+Natasha Romanov
+Minneapolis, MN | natasha.r@email.com | (612) 555-3390 | github.com/nromanov-platform
+
+Summary:
+Software Engineer with 4 years of experience building Python and Go microservices, transitioning to dedicated Platform and DevOps Engineering. Strong coding and containerization foundation.
+
+Skills:
+Python, Go, Docker, Kubernetes (foundational), AWS (ECS, S3, IAM, CloudWatch), Terraform (intermediate), GitHub Actions, SQL, PostgreSQL, Linux.
+
+Experience:
+Backend / Platform Engineer | Prairie Logic (2021 - Present)
+- Built internal developer platform CLI tool in Go and Python to automate local Docker development environment setup.
+- Authored Terraform configurations to deploy microservices on AWS ECS with automated SSL certificates.
+- Built GitHub Actions workflows to lint, test, and package Docker containers on every pull request.
+
+Software Developer | Northern Tech (2020 - 2021)
+- Built RESTful backend APIs in Python (Flask) and PostgreSQL.
+- Participated in on-call rotation addressing service degradation and database deadlocks.
+
+Education:
+B.S. in Computer Science | University of Minnesota (2020)

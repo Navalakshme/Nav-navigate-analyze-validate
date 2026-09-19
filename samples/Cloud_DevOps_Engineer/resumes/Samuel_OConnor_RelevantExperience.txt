@@ -1,0 +1,23 @@
+Samuel O'Connor
+Columbus, OH | samuel.oc@email.com | (614) 555-7634 | linkedin.com/in/samuel-oconnor-sys
+
+Summary:
+Senior Systems & Network Administrator with 6 years of experience in enterprise Linux, network security, and VMware virtualization, transitioning infrastructure to AWS.
+
+Skills:
+Linux (RHEL, Ubuntu), Bash scripting, Python, AWS (EC2, VPC, S3, Route53), Docker, Terraform (Intermediate), Ansible, Cisco Networking, WireGuard, Prometheus.
+
+Experience:
+Senior Systems Administrator | Buckeye Health Systems (2020 - Present)
+- Administered 200+ physical and virtual Linux servers with 99.98% uptime SLA.
+- Led migration of on-premises secondary datacenter to AWS VPC using Terraform and Ansible.
+- Implemented automated server provisioning and configuration management using Ansible playbooks.
+- Managed network switches, VPN gateways, and firewall access control lists.
+
+Network & Systems Engineer | Midwest Telecom (2018 - 2020)
+- Designed subnet topologies and VLAN routing for multi-building enterprise campus.
+- Managed monitoring and SNMP alerts using Nagios and Prometheus.
+
+Education:
+B.S. in Network Systems Administration | Ohio State University (2018)
+CompTIA Security+ (2020)

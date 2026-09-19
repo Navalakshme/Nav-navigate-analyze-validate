@@ -1,0 +1,27 @@
+Job Title: Senior Full Stack Developer (React & Node.js/Python)
+Department: Product Engineering
+Location: Remote / Hybrid
+Employment Type: Full-Time
+
+About the Role:
+We are seeking an experienced Full Stack Developer to build modern, responsive web applications and scalable backend microservices. You will take ownership of end-to-end features, from UI component architecture in React and TypeScript to high-performance backend APIs and database schemas.
+
+Required Qualifications:
+- 4+ years of professional full stack software development experience.
+- Expert proficiency in modern frontend frameworks, specifically React with TypeScript.
+- Strong backend experience with Node.js/Express, Python (FastAPI/Django), or Go.
+- Solid expertise in SQL database design (PostgreSQL/MySQL) and query optimization.
+- Hands-on experience developing RESTful and GraphQL APIs.
+- Experience with Docker containerization and modern CI/CD deployment pipelines.
+- Bachelor's degree in Computer Science, Software Engineering, or equivalent practical experience.
+
+Preferred Qualifications:
+- Familiarity with Next.js, Tailwind CSS, and state management libraries (Zustand/Redux).
+- Cloud deployment experience on AWS (ECS, Lambda, S3, CloudFront) or Vercel.
+- Experience with automated end-to-end testing frameworks (Cypress, Playwright, Jest).
+
+Responsibilities:
+- Architect, build, and deploy robust web applications with responsive design.
+- Design scalable relational database schemas, migrations, and caching layers.
+- Build clean, well-tested REST and WebSocket APIs.
+- Collaborate with UI/UX designers, product managers, and QA engineers.

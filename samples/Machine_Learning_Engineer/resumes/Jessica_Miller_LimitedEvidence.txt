@@ -1,0 +1,22 @@
+Jessica Miller
+Denver, CO | jessica.m@email.com | (303) 555-3211 | linkedin.com/in/jessicamiller-da
+
+Summary:
+Business Intelligence & Data Analyst with 3 years of experience writing SQL queries and building dashboards, transitioning to Machine Learning. Completed certifications in Python and Machine Learning.
+
+Skills:
+SQL, Tableau, Excel, PowerBI, Python (Intermediate), Scikit-learn (Basic), Pandas, Git, basic AWS S3.
+
+Experience:
+Senior Data Analyst | MileHigh Media (2022 - Present)
+- Created executive dashboards and reporting pipelines in Tableau and PostgreSQL.
+- Wrote complex SQL queries to analyze marketing campaign performance across millions of impressions.
+- Implemented basic customer churn prediction script in Python using Scikit-learn and Logistic Regression.
+
+Data Analyst | Peak Retailers (2021 - 2022)
+- Maintained sales forecasting spreadsheets and automated reporting in Excel and SQL.
+- Assisted finance department with ad-hoc variance analysis.
+
+Education:
+B.A. in Economics | University of Colorado Boulder (2021)
+Machine Learning Specialization Certificate | Coursera (2024)

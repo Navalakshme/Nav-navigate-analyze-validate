@@ -1,0 +1,22 @@
+Jason Chen
+New York, NY | jason.chen@email.com | (917) 555-7761 | github.com/jasonchen-fs
+
+Summary:
+Full Stack Engineer with 4.5 years of experience building modern React/TypeScript frontends backed by Python (FastAPI/Django) and PostgreSQL microservices.
+
+Skills:
+React, TypeScript, Next.js, Tailwind CSS, Python (FastAPI, Django), PostgreSQL, Redis, Docker, AWS (ECS, S3, RDS, CloudFront), RESTful APIs, GraphQL, Jest, Git.
+
+Experience:
+Senior Full Stack Engineer | NovaFintech (2022 - Present)
+- Architected client dashboard in React 18, TypeScript, and Tailwind CSS serving 300K monthly active business customers.
+- Developed backend API layer in Python (FastAPI) and PostgreSQL with asynchronous connection pooling, handling 4,000 RPS at 99.99% uptime.
+- Deployed containerized applications with Docker and GitHub Actions to AWS ECS.
+- Designed complex SQL queries and schema migrations using Alembic and PostgreSQL.
+
+Full Stack Developer | Beacon Health (2020 - 2022)
+- Built interactive patient portal in React and Node.js with HIPAA-compliant data encryption.
+- Wrote unit and integration tests with Jest, achieving 87% test coverage.
+
+Education:
+B.S. in Computer Science | Columbia University (2020)

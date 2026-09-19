@@ -1,0 +1,23 @@
+Ananya Patel
+Pune, India | ananya.patel@email.com | +91 97654 32109 | linkedin.com/in/ananyap-dev
+
+Summary:
+Full Stack Web Developer with 3.5 years of experience building web applications using React, JavaScript, Node.js, and SQL databases.
+
+Skills:
+React, JavaScript, TypeScript, HTML/CSS, Node.js, Express, MongoDB, PostgreSQL, REST APIs, Git, Docker, Bootstrap.
+
+Experience:
+Full Stack Developer | SoftCore Solutions (2021 - Present)
+- Developed front-end components and screens using React and CSS for client web platforms.
+- Built backend APIs using Node.js and Express to handle user authentication and data processing.
+- Worked with PostgreSQL and MongoDB databases to store user information and transactions.
+- Involved in fixing bugs, optimizing UI layouts, and integrating third-party APIs.
+
+Junior Web Developer | WebCraft Studio (2020 - 2021)
+- Created responsive landing pages and user interfaces using HTML, CSS, JavaScript, and React.
+- Wrote basic CRUD backend endpoints in Express.
+- Collaborated with QA team to test cross-browser compatibility.
+
+Education:
+B.E. in Computer Engineering | Pune University (2020)

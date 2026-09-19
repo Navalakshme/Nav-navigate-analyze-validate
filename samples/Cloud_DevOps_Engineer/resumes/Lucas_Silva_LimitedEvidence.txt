@@ -1,0 +1,20 @@
+Lucas Silva
+Miami, FL | lucas.silva@email.com | (305) 555-9921 | linkedin.com/in/lucas-silva-it
+
+Summary:
+Junior IT and Cloud Administrator with 1.5 years of experience administering Linux servers and basic cloud environments. Eager to grow as a DevOps professional.
+
+Skills:
+Linux, Bash, Git, AWS (EC2, S3, Route53), Docker (basic), Python (beginner), Networking.
+
+Experience:
+Junior Systems Administrator | SunCoast Media (2023 - Present)
+- Monitored health of Linux servers and AWS EC2 instances.
+- Automated repetitive disk cleanup and log archival tasks using Bash scripts.
+- Assisted senior DevOps engineer in testing Docker container builds.
+
+IT Support Technician | Nova Systems (2022 - 2023)
+- Managed workstation configurations, printer networking, and user account provisioning.
+
+Education:
+A.S. in Computer Networking | Miami Dade College (2022)

@@ -1,0 +1,23 @@
+Brian Kowalski
+Chicago, IL | brian.k@email.com | (312) 555-6712 | github.com/bkowalski-devops
+
+Summary:
+Senior DevOps Engineer with 5 years of experience specializing in Infrastructure as Code (Terraform), Kubernetes cluster orchestration, and high-performance CI/CD automation on AWS.
+
+Skills:
+AWS (EKS, ECS, RDS, CloudFront, Route53, IAM), Terraform, Kubernetes, Helm, Docker, GitHub Actions, Python, Bash, Prometheus, Grafana, OpenSearch.
+
+Experience:
+Senior DevOps Engineer | NextGen Trading Systems (2022 - Present)
+- Engineered scalable AWS EKS Kubernetes clusters serving ultra-low latency financial data feeds.
+- Developed modular, reusable Terraform modules managing 100% of cloud resources across staging and production.
+- Cut CI/CD build and test pipeline duration by 52% through intelligent GitHub Actions dependency caching and test sharding.
+- Implemented automated Canary deployments with Argo Rollouts and Prometheus metrics analysis.
+
+DevOps Engineer | BlueSky Analytics (2019 - 2022)
+- Containerized data science workloads with Docker and orchestrated scheduled batch jobs on AWS ECS.
+- Designed centralized log aggregation system with Fluentd and AWS OpenSearch.
+
+Education:
+B.S. in Computer Engineering | University of Illinois Urbana-Champaign (2019)
+Certified Kubernetes Administrator (CKA, 2023)

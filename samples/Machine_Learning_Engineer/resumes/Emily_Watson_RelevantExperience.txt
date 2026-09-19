@@ -1,0 +1,22 @@
+Emily Watson
+Boston, MA | emily.watson@email.com | (617) 555-4321 | github.com/emilyw-data
+
+Summary:
+Senior Data & Machine Learning Platform Engineer with 5 years of experience building large-scale data pipelines, feature stores, and ML training pipelines in Python and SQL on AWS.
+
+Skills:
+Python, SQL, PostgreSQL, Apache Spark, Snowflake, Airflow, AWS (EKS, SageMaker, S3, Glue), Docker, Kubernetes, Scikit-learn, PyTorch (intermediate), Feast Feature Store.
+
+Experience:
+Senior Data Engineer (ML Platform) | QuantHealth (2022 - Present)
+- Designed and maintained distributed feature store using Feast, PostgreSQL, and AWS S3, serving features to 15+ production ML models.
+- Collaborated with ML researchers to package PyTorch models into standardized Docker containers for batch inference jobs on AWS EKS.
+- Developed complex SQL and PySpark data validation pipelines processing 100M+ health records daily with strict HIPAA compliance.
+
+Data Engineer | BioInformatics Inc. (2019 - 2022)
+- Built ETL data pipelines using Airflow, Python, and PostgreSQL on AWS.
+- Automated data warehouse ingestion into Snowflake, improving query execution speed by 35%.
+
+Education:
+M.S. in Data Science | Boston University (2019)
+B.S. in Applied Mathematics | Tufts University (2017)

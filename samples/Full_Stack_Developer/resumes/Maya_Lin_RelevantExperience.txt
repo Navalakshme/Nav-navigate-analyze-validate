@@ -1,0 +1,21 @@
+Maya Lin
+San Francisco, CA | maya.lin@email.com | (415) 555-6543 | github.com/mayalin-backend
+
+Summary:
+Senior Backend Engineer with 5 years of experience in Python, FastAPI, Go, and PostgreSQL. Recently completed React and TypeScript certification to deliver full stack features.
+
+Skills:
+Python (FastAPI, Flask, Django), PostgreSQL, MySQL, Redis, Go, Docker, AWS (ECS, RDS, S3), React (Intermediate), TypeScript (Intermediate), Tailwind CSS, REST APIs, gRPC, CI/CD.
+
+Experience:
+Senior Backend Engineer | DataSphere Inc. (2021 - Present)
+- Designed and maintained 15+ backend microservices in Python (FastAPI) and PostgreSQL serving 5M daily users.
+- Led migration of legacy monolith to containerized Docker services on AWS ECS.
+- Built internal administrative portal in React and TypeScript with Tailwind CSS to manage customer entitlements.
+
+Software Engineer | FinFlow Systems (2019 - 2021)
+- Built transaction reconciliation microservice with Python and PostgreSQL.
+- Authored RESTful API documentation and automated testing with pytest.
+
+Education:
+B.S. in Computer Science | UC Davis (2019)

@@ -1,0 +1,28 @@
+Alex Chen
+San Francisco, CA | alex.chen@email.com | (555) 234-5678 | github.com/alexchen-ml | linkedin.com/in/alexchen-ai
+
+Summary:
+Senior Machine Learning Engineer with 5+ years of experience designing and deploying deep learning inference microservices on AWS and Kubernetes. Proven track record scaling ML systems to 20M daily active users.
+
+Skills:
+Python, PyTorch, TensorFlow, TensorRT, ONNX Runtime, AWS (SageMaker, EKS, ECS, S3, CloudWatch), Docker, Kubernetes, SQL, PostgreSQL, Apache Spark, Pinecone, MLflow, CI/CD.
+
+Experience:
+Senior Machine Learning Engineer | HyperScale AI (2022 - Present)
+- Deployed transformer models on AWS EKS using PyTorch and Triton Inference Server, reducing p99 latency from 140ms to 28ms at 3,500 RPS.
+- Built automated continuous retraining and drift detection pipelines with MLflow and SageMaker, reducing model drift turnaround by 65%.
+- Authored Terraform modules to manage multi-node GPU Kubernetes clusters on AWS.
+- Architected enterprise RAG system incorporating Pinecone vector database and hybrid search, boosting semantic search precision by 24%.
+
+Machine Learning Engineer | Apex FinTech Labs (2019 - 2022)
+- Built real-time fraud detection classification system utilizing XGBoost and PyTorch running on AWS ECS and PostgreSQL. Processed 10M+ daily transactions.
+- Designed complex SQL queries and ETL transformations over distributed Postgres and Redshift databases.
+- Containerized model deployments using Docker and GitHub Actions, establishing zero-downtime blue/green deployment strategy.
+
+Education:
+M.S. in Computer Science | University of Washington (2019)
+B.S. in Computer Science | UC Berkeley (2017)
+
+Certifications:
+AWS Certified Machine Learning - Specialty (2023)
+Certified Kubernetes Administrator (CKA, 2022)

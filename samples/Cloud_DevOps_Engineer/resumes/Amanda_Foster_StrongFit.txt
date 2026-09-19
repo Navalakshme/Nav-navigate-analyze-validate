@@ -1,0 +1,23 @@
+Amanda Foster
+San Diego, CA | amanda.f@email.com | (619) 555-9043 | github.com/afoster-devsecops
+
+Summary:
+Senior DevSecOps & Cloud Platform Engineer with 5+ years of experience architecting secure AWS infrastructure, Kubernetes security policies, and automated CI/CD pipelines.
+
+Skills:
+AWS (EKS, IAM, GuardDuty, KMS, VPC, CloudTrail), Terraform, Kubernetes, Docker, GitHub Actions, Python, Bash, Datadog, Trivy, Falco, SOC 2 compliance.
+
+Experience:
+Senior DevSecOps Engineer | Cybershield Platform (2022 - Present)
+- Automated AWS multi-account security landing zones using Terraform and AWS Organizations, achieving SOC 2 Type II certification.
+- Secured Kubernetes (EKS) clusters with Falco runtime intrusion detection, OPA Gatekeeper admission controllers, and automated vulnerability scans.
+- Built reusable GitHub Actions CI/CD workflows for 25 microservice repositories with automated container scanning and SBOM generation.
+- Designed automated disaster recovery failover across AWS us-east-1 and us-west-2 regions with RPO < 5 minutes.
+
+DevOps Engineer | FinSecure Labs (2019 - 2022)
+- Managed Kubernetes deployments and Docker images on AWS EKS.
+- Developed Python automation scripts for AWS IAM role auditing and credential rotation.
+
+Education:
+B.S. in Cybersecurity & Information Assurance | UC San Diego (2019)
+AWS Certified DevOps Engineer - Professional (2022)

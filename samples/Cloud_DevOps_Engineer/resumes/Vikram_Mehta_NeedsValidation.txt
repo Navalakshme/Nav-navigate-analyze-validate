@@ -1,0 +1,24 @@
+Vikram Mehta
+Mumbai, India | vikram.mehta@email.com | +91 98112 23344 | linkedin.com/in/vikram-devops
+
+Summary:
+DevOps Engineer with 4 years of experience working with AWS cloud services, CI/CD pipelines, and Linux administration.
+
+Skills:
+AWS, Docker, Kubernetes, Terraform, Jenkins, Git, Linux, Bash, Python, CloudWatch, Ansible.
+
+Experience:
+DevOps Engineer | InfraTech Solutions (2021 - Present)
+- Maintained AWS cloud infrastructure for company applications.
+- Created and updated Terraform scripts for resource provisioning.
+- Managed container deployments using Docker and Kubernetes.
+- Configured CI/CD pipelines in Jenkins to automate build and deployment processes.
+- Monitored system uptime and performance using CloudWatch alerts.
+
+Linux Systems Administrator | Global IT Services (2020 - 2021)
+- Managed Linux server configurations, user permissions, and security patches.
+- Wrote Bash scripts for backup automation and log rotation.
+- Assisted networking team with firewall rules and DNS configurations.
+
+Education:
+B.E. in Information Technology | Mumbai University (2020)
