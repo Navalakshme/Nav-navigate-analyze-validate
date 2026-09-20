@@ -20,17 +20,17 @@
   }
 
   ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
     @apply bg-bg-primary;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-border-bright rounded-full;
+    @apply bg-border-default rounded-full;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-accent-purple;
+    @apply bg-border-bright;
   }
 }
 
@@ -40,15 +40,15 @@
   }
 
   .card-hover {
-    @apply card transition-all duration-200 hover:border-border-bright hover:shadow-card-hover cursor-pointer;
+    @apply card transition-all duration-200 hover:border-accent-violet/30 hover:shadow-card-hover cursor-pointer;
   }
 
   .btn-primary {
-    @apply bg-accent-gradient text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-90 hover:shadow-glow-sm active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-accent-gradient text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:opacity-95 hover:shadow-glow-sm active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .btn-secondary {
-    @apply bg-bg-elevated border border-border-default text-text-primary font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:border-border-bright hover:bg-bg-card active:scale-95 disabled:opacity-50;
+    @apply bg-white border border-border-default text-text-primary font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:border-accent-violet/40 hover:bg-bg-elevated active:scale-95 disabled:opacity-50;
   }
 
   .btn-ghost {
@@ -56,23 +56,23 @@
   }
 
   .badge-verified {
-    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-verified/15 text-status-verified border border-status-verified/30;
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-verified/10 text-status-verified border border-status-verified/20;
   }
 
   .badge-validation {
-    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-validation/15 text-status-validation border border-status-validation/30;
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-validation/10 text-status-validation border border-status-validation/20;
   }
 
   .badge-missing {
-    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-missing/15 text-status-missing border border-status-missing/30;
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-missing/10 text-status-missing border border-status-missing/20;
   }
 
   .badge-info {
-    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-info/15 text-status-info border border-status-info/30;
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-status-info/10 text-status-info border border-status-info/20;
   }
 
   .input-field {
-    @apply bg-bg-elevated border border-border-default rounded-lg px-3 py-2 text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-violet focus:ring-1 focus:ring-accent-violet/30 transition-colors;
+    @apply bg-white border border-border-default rounded-lg px-3 py-2 text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-accent-violet focus:ring-2 focus:ring-accent-violet/20 transition-all;
   }
 
   .section-header {
@@ -88,11 +88,11 @@
   }
 
   .nav-item-active {
-    @apply nav-item bg-accent-purple/15 text-accent-glow border border-accent-purple/20;
+    @apply nav-item bg-accent-purple/10 text-accent-violet font-semibold border border-accent-purple/20;
   }
 
   .evidence-tag {
-    @apply text-xs bg-bg-secondary border border-border-subtle rounded px-2 py-1 font-mono text-text-secondary;
+    @apply text-xs bg-bg-elevated border border-border-subtle rounded px-2 py-1 font-mono text-text-secondary;
   }
 
   .divider {
@@ -116,7 +116,7 @@
   }
 
   .tab-button-active {
-    @apply tab-button text-accent-glow border-accent-violet;
+    @apply tab-button text-accent-violet border-accent-violet font-semibold;
   }
 
   .loading-pulse {
@@ -126,7 +126,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #A78BFA 0%, #EC4899 100%);
+    background: linear-gradient(135deg, #6D28D9 0%, #DB2777 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -138,7 +138,7 @@
   }
 
   .glow-purple {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.15);
   }
 
   .truncate-2 {

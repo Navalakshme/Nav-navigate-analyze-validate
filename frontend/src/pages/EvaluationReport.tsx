@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   FileText, CheckCircle2, AlertTriangle, XCircle,
-  ArrowLeft, Download, Users, MapPin, Zap
+  ArrowLeft, Download, Users, MapPin, Zap, RotateCcw
 } from 'lucide-react';
 import clsx from 'clsx';
 import { useAppStore } from '../store/appStore';
@@ -42,7 +42,7 @@ export default function EvaluationReport() {
 
   if (candidates.length === 0) {
     return (
-      <div className="p-6 text-center">
+      <div className="p-6 text-center max-w-2xl mx-auto">
         <div className="card p-12">
           <FileText className="w-12 h-12 text-text-muted mx-auto mb-3" />
           <h2 className="text-base font-semibold mb-1">No Candidates Available</h2>
@@ -55,25 +55,50 @@ export default function EvaluationReport() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto space-y-5 animate-fade-in">
+      {/* Top Header */}
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="page-title">Evaluation Report</h1>
-          <p className="page-subtitle">Standardized recruiter intelligence report</p>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => navigate('/candidates')}
+            className="btn-secondary flex items-center gap-1.5 text-xs py-1.5 px-2.5"
+            title="Return to Candidates List"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to Candidates
+          </button>
+          <div>
+            <h1 className="page-title">Candidate Evaluation Report</h1>
+            <p className="page-subtitle">Standardized recruiter intelligence report with human-in-the-loop decision</p>
+          </div>
         </div>
         {report && (
-          <button onClick={handlePrint} className="btn-secondary flex items-center gap-2 text-sm">
-            <Download className="w-4 h-4" /> Export
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setReport(null)}
+              className="btn-secondary flex items-center gap-1.5 text-xs py-1.5 px-3"
+            >
+              <RotateCcw className="w-3.5 h-3.5" /> Another Candidate
+            </button>
+            <button
+              onClick={handlePrint}
+              className="btn-primary flex items-center gap-1.5 text-xs py-1.5 px-3"
+            >
+              <Download className="w-3.5 h-3.5" /> Export Report
+            </button>
+          </div>
         )}
       </div>
 
       {error && <ErrorAlert message={error} onDismiss={() => setError(null)} />}
 
-      {/* Candidate + generate */}
+      {/* Candidate Selector + Notes */}
       {!report && (
         <div className="card p-5 space-y-4">
-          <h3 className="text-sm font-semibold text-text-primary">Select Candidate & Generate Report</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+          <div className="flex items-center justify-between">
+            <h3 className="text-sm font-semibold text-text-primary">Select Candidate to Evaluate</h3>
+            <span className="text-xs text-text-muted">{candidates.length} candidates loaded</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
             {candidates.map(c => (
               <button
                 key={c.id}
@@ -81,168 +106,167 @@ export default function EvaluationReport() {
                 className={clsx(
                   'p-3 rounded-xl border text-left transition-all',
                   selectedId === c.id
-                    ? 'border-accent-violet bg-accent-violet/10'
-                    : 'border-border-subtle bg-bg-elevated hover:border-border-bright'
+                    ? 'border-accent-violet bg-accent-violet/10 ring-1 ring-accent-violet'
+                    : 'border-border-subtle bg-bg-elevated hover:border-accent-violet/40'
                 )}
               >
-                <p className="text-sm font-medium text-text-primary truncate">{c.name}</p>
-                <p className="text-[10px] text-text-muted mt-0.5">{c.group}</p>
+                <p className="text-sm font-semibold text-text-primary truncate">{c.name}</p>
+                <div className="flex items-center justify-between mt-1 text-[11px] text-text-muted">
+                  <span>{c.group}</span>
+                  <span className="text-status-verified font-medium">{c.evidence_coverage.verified}✓</span>
+                </div>
               </button>
             ))}
           </div>
+
           <div>
-            <label className="block text-xs font-medium text-text-secondary mb-1.5">Recruiter Notes (optional)</label>
+            <label className="block text-xs font-medium text-text-secondary mb-1.5">
+              Recruiter Observations & Notes (optional)
+            </label>
             <textarea
               value={recruiterNotes}
               onChange={e => setRecruiterNotes(e.target.value)}
-              placeholder="Add any additional context or notes for this report..."
-              className="input-field w-full min-h-20 resize-none"
+              placeholder="Add phone screen impressions, salary expectations, notice period, or cultural fit notes..."
+              className="input-field w-full min-h-20 resize-none text-xs"
             />
           </div>
-          <button
-            onClick={handleGenerate}
-            disabled={!selectedId || isGeneratingReport}
-            className="btn-primary flex items-center gap-2"
-          >
-            {isGeneratingReport ? (
-              <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Generating...</>
-            ) : (
-              <><Zap className="w-4 h-4" /> Generate Intelligence Report</>
-            )}
-          </button>
+
+          <div className="flex items-center justify-between pt-1">
+            <button
+              onClick={() => navigate('/candidates')}
+              className="btn-secondary text-xs flex items-center gap-1.5"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" /> Cancel & Back to Candidates
+            </button>
+            <button
+              onClick={handleGenerate}
+              disabled={!selectedId || isGeneratingReport}
+              className="btn-primary text-xs flex items-center gap-2"
+            >
+              {isGeneratingReport ? (
+                <><div className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Compiling Report...</>
+              ) : (
+                <><Zap className="w-3.5 h-3.5" /> Generate Intelligence Report</>
+              )}
+            </button>
+          </div>
         </div>
       )}
 
       {isGeneratingReport && (
-        <LoadingSpinner message="NAV is generating the intelligence report..." submessage="Compiling evidence, mapping requirements, structuring findings" />
+        <LoadingSpinner
+          message="NAV is compiling the candidate intelligence report..."
+          submessage="Synthesizing verified claims, evaluating gaps, structuring final assessment"
+        />
       )}
 
-      {/* Report */}
+      {/* Full Generated Report */}
       {report && !isGeneratingReport && (
         <div className="space-y-5" id="nav-report">
-          {/* Report Header */}
-          <div className="card p-6 border-accent-violet/20">
+          {/* Report Header Card */}
+          <div className="card p-6 border-accent-violet/30">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <div className="w-6 h-6 rounded bg-accent-purple/15 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded bg-accent-purple/10 flex items-center justify-center">
                     <FileText className="w-3.5 h-3.5 text-accent-violet" />
                   </div>
-                  <span className="text-xs font-semibold text-accent-violet uppercase tracking-wider">NAV Intelligence Report</span>
+                  <span className="text-xs font-bold text-accent-violet uppercase tracking-wider">NAV Intelligence Report</span>
                 </div>
                 <h2 className="text-xl font-bold text-text-primary">{report.candidate_name}</h2>
-                <p className="text-sm text-text-muted">{report.job_title}</p>
+                <p className="text-xs text-text-muted">{report.job_title}</p>
               </div>
               <div className="text-right">
                 <p className="text-[10px] text-text-muted">Generated</p>
                 <p className="text-xs text-text-secondary">{new Date(report.generated_at).toLocaleString()}</p>
-                <button onClick={() => setReport(null)} className="btn-ghost text-xs mt-2">New Report</button>
+                <div className="flex items-center gap-2 mt-2">
+                  <button
+                    onClick={() => navigate('/candidates')}
+                    className="btn-secondary text-xs py-1 px-2.5 flex items-center gap-1"
+                  >
+                    <ArrowLeft className="w-3 h-3" /> Candidates List
+                  </button>
+                  <button
+                    onClick={() => setReport(null)}
+                    className="btn-ghost text-xs py-1 px-2 flex items-center gap-1"
+                  >
+                    <RotateCcw className="w-3 h-3" /> Select Another
+                  </button>
+                </div>
               </div>
             </div>
-            <p className="text-sm text-text-secondary leading-relaxed bg-bg-elevated border border-border-subtle rounded-lg p-3">
+            <p className="text-xs text-text-secondary leading-relaxed bg-bg-elevated border border-border-subtle rounded-lg p-3">
               {report.overview}
             </p>
           </div>
 
-          {/* Evidence Summary */}
-          <div className="grid grid-cols-3 gap-3">
+          {/* Evidence Summary Counters */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
               { label: 'Verified Evidence', items: report.verified_areas, icon: CheckCircle2, color: 'text-status-verified', bg: 'bg-status-verified/10', border: 'border-status-verified/20' },
               { label: 'Needs Validation', items: report.needs_validation_areas, icon: AlertTriangle, color: 'text-status-validation', bg: 'bg-status-validation/10', border: 'border-status-validation/20' },
               { label: 'Missing Evidence', items: report.missing_areas, icon: XCircle, color: 'text-status-missing', bg: 'bg-status-missing/10', border: 'border-status-missing/20' },
             ].map(({ label, items, icon: Icon, color, bg, border }) => (
               <div key={label} className={clsx('card p-3 border', border, bg)}>
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 mb-1">
                   <Icon className={clsx('w-4 h-4', color)} />
                   <p className="text-xs font-semibold text-text-primary">{label}</p>
                 </div>
-                <p className={clsx('text-2xl font-bold', color)}>{items.length}</p>
+                <p className={clsx('text-xl font-bold', color)}>{items.length}</p>
                 <div className="mt-2 space-y-1">
-                  {items.slice(0, 3).map((r, i) => (
-                    <p key={i} className="text-[10px] text-text-muted truncate">· {r.requirement}</p>
+                  {items.slice(0, 3).map((item, ii) => (
+                    <p key={ii} className="text-[10px] text-text-secondary truncate">• {item}</p>
                   ))}
-                  {items.length > 3 && <p className="text-[10px] text-text-muted">+{items.length - 3} more</p>}
+                  {items.length > 3 && (
+                    <p className="text-[10px] text-text-muted">+{items.length - 3} more</p>
+                  )}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Full Requirement Mapping */}
-          <div className="card p-4">
-            <h3 className="text-sm font-semibold text-text-primary mb-3">Requirement-by-Requirement Evidence</h3>
-            <div className="space-y-2">
-              {report.requirement_mappings.map((m, i) => (
-                <div key={i} className="flex items-start gap-3 py-2.5 border-b border-border-subtle last:border-0">
-                  <StatusBadge status={m.status} size="sm" />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-text-primary">{m.requirement}</p>
-                    {m.evidence[0] && (
-                      <p className="text-xs text-text-muted mt-0.5 italic truncate">"{m.evidence[0].text}"</p>
-                    )}
-                    {m.validation_needed && (
-                      <p className="text-xs text-status-validation mt-0.5">⚠ {m.validation_needed}</p>
-                    )}
-                  </div>
-                  <span className="text-[10px] text-text-muted flex-shrink-0">{m.category}</span>
-                </div>
-              ))}
+          {/* Key Strengths & Validation Areas */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="card p-4">
+              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-status-verified" /> Key Strengths
+              </h3>
+              <ul className="space-y-1.5 text-xs text-text-secondary">
+                {report.key_strengths.map((s, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-status-verified font-bold mt-0.5">•</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="card p-4">
+              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <AlertTriangle className="w-3.5 h-3.5 text-status-validation" /> Critical Validation Areas
+              </h3>
+              <ul className="space-y-1.5 text-xs text-text-secondary">
+                {report.validation_areas.map((v, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-status-validation font-bold mt-0.5">•</span>
+                    <span>{v}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          {/* Interview Findings */}
-          {report.interview_findings.length > 0 && (
-            <div className="card p-4">
-              <h3 className="text-sm font-semibold text-text-primary mb-3">Interview Findings</h3>
-              <ul className="space-y-2">
-                {report.interview_findings.map((f, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent-violet mt-1.5 flex-shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Unanswered Areas */}
-          {report.unanswered_areas.length > 0 && (
-            <div className="card p-4 border-status-validation/20">
-              <h3 className="text-sm font-semibold text-status-validation mb-3">Unanswered Evaluation Areas</h3>
-              <ul className="space-y-1.5">
-                {report.unanswered_areas.map((a, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                    <AlertTriangle className="w-3.5 h-3.5 text-status-validation mt-0.5 flex-shrink-0" />
-                    {a}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Next Steps */}
-          {report.next_validation_steps.length > 0 && (
-            <div className="card p-4">
-              <h3 className="text-sm font-semibold text-text-primary mb-3">Recommended Next Validation Steps</h3>
-              <ol className="space-y-2">
-                {report.next_validation_steps.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                    <span className="text-accent-violet font-bold flex-shrink-0">{i + 1}.</span>
-                    {s}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
-
-          {/* ── HUMAN DECISION SECTION ── */}
-          <div className="card p-5 border-2 border-border-bright">
-            <div className="flex items-center gap-2 mb-1">
-              <Users className="w-4 h-4 text-text-primary" />
-              <h3 className="text-sm font-bold text-text-primary">Recruiter Decision</h3>
-              <span className="ml-auto text-[10px] bg-bg-elevated border border-border-subtle px-2 py-0.5 rounded text-text-muted">Human Only</span>
+          {/* Human-in-the-loop Recruiter Decision */}
+          <div className="card p-5 border-accent-purple/30 bg-bg-card">
+            <div className="flex items-center gap-2 mb-2">
+              <Users className="w-4 h-4 text-accent-violet" />
+              <h3 className="text-sm font-bold text-text-primary">Recruiter Decision & Next Steps</h3>
+              <span className="ml-auto text-[10px] bg-accent-purple/10 text-accent-violet font-semibold border border-accent-purple/20 px-2 py-0.5 rounded">
+                Human Only
+              </span>
             </div>
             <p className="text-xs text-text-muted mb-4">
-              NAV does not make hiring decisions. This section is for the recruiter's own notes and final decision.
+              NAV does not make hiring decisions. This section is reserved for your professional evaluation.
             </p>
             <div className="space-y-3">
               <div>
@@ -250,21 +274,21 @@ export default function EvaluationReport() {
                 <textarea
                   value={recruiterNotes}
                   onChange={e => setRecruiterNotes(e.target.value)}
-                  placeholder="Your observations, impressions, and additional context..."
-                  className="input-field w-full min-h-20 resize-none"
+                  placeholder="Your final candidate impressions and validation notes..."
+                  className="input-field w-full min-h-16 resize-none text-xs"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-text-secondary mb-1.5">Decision / Next Step</label>
+                <label className="block text-xs font-medium text-text-secondary mb-1.5">Action / Recommendation</label>
                 <div className="flex gap-2 flex-wrap">
-                  {['Proceed to next round', 'Request references', 'Schedule technical test', 'Hold for now', 'No further action'].map(opt => (
+                  {['Proceed to next round', 'Request references', 'Schedule technical test', 'Hold for comparison', 'No further action'].map(opt => (
                     <button
                       key={opt}
                       onClick={() => setRecruiterDecision(opt)}
                       className={clsx(
                         'px-3 py-1.5 rounded-lg border text-xs font-medium transition-all',
                         recruiterDecision === opt
-                          ? 'border-accent-violet bg-accent-violet/15 text-accent-glow'
+                          ? 'border-accent-violet bg-accent-violet/10 text-accent-violet font-bold'
                           : 'border-border-subtle bg-bg-elevated text-text-muted hover:border-border-bright'
                       )}
                     >
@@ -273,9 +297,33 @@ export default function EvaluationReport() {
                   ))}
                 </div>
                 {recruiterDecision && (
-                  <p className="text-xs text-accent-violet mt-2">Selected: {recruiterDecision}</p>
+                  <p className="text-xs font-semibold text-accent-violet mt-2">Selected Action: {recruiterDecision}</p>
                 )}
               </div>
+            </div>
+          </div>
+
+          {/* Bottom Action Footer Bar */}
+          <div className="flex items-center justify-between p-4 card bg-bg-elevated/50">
+            <button
+              onClick={() => navigate('/candidates')}
+              className="btn-secondary flex items-center gap-2 text-xs"
+            >
+              <ArrowLeft className="w-4 h-4" /> Back to Candidates List
+            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setReport(null)}
+                className="btn-secondary flex items-center gap-2 text-xs"
+              >
+                <RotateCcw className="w-3.5 h-3.5" /> Evaluate Another Candidate
+              </button>
+              <button
+                onClick={handlePrint}
+                className="btn-primary flex items-center gap-2 text-xs"
+              >
+                <Download className="w-3.5 h-3.5" /> Export / Print Report
+              </button>
             </div>
           </div>
         </div>
