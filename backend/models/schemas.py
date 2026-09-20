@@ -152,6 +152,8 @@ class RecruiterReport(BaseModel):
     verified_areas: List[RequirementMapping] = []
     needs_validation_areas: List[RequirementMapping] = []
     missing_areas: List[RequirementMapping] = []
+    key_strengths: List[str] = []
+    validation_areas: List[str] = []
     interview_findings: List[str] = []
     unanswered_areas: List[str] = []
     evidence_references: List[EvidenceItem] = []

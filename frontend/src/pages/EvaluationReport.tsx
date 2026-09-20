@@ -24,6 +24,17 @@ export default function EvaluationReport() {
 
   const candidate = candidates.find(c => c.id === selectedId);
 
+  const strengthsList = (report?.key_strengths && report.key_strengths.length > 0)
+    ? report.key_strengths
+    : (report?.verified_areas || []).map(m => typeof m === 'string' ? m : `${m.requirement}: ${m.reasoning}`);
+
+  const validationList = (report?.validation_areas && report.validation_areas.length > 0)
+    ? report.validation_areas
+    : [
+        ...(report?.needs_validation_areas || []).map(m => typeof m === 'string' ? m : `${m.requirement}: ${m.missing_info || m.reasoning}`),
+        ...(report?.missing_areas || []).map(m => typeof m === 'string' ? m : `Missing: ${m.requirement}`)
+      ];
+
   const handleGenerate = async () => {
     if (!selectedId) { setError('Select a candidate first.'); return; }
     setError(null);
@@ -163,111 +174,163 @@ export default function EvaluationReport() {
       {/* Full Generated Report */}
       {report && !isGeneratingReport && (
         <div className="space-y-5" id="nav-report">
-          {/* Report Header Card */}
-          <div className="card p-6 border-accent-violet/30">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-6 h-6 rounded bg-accent-purple/10 flex items-center justify-center">
-                    <FileText className="w-3.5 h-3.5 text-accent-violet" />
+            {/* Report Header Card */}
+            <div className="card p-6 border-accent-violet/30">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-6 h-6 rounded bg-accent-purple/10 flex items-center justify-center">
+                      <FileText className="w-3.5 h-3.5 text-accent-violet" />
+                    </div>
+                    <span className="text-xs font-bold text-accent-violet uppercase tracking-wider">NAV Intelligence Report</span>
                   </div>
-                  <span className="text-xs font-bold text-accent-violet uppercase tracking-wider">NAV Intelligence Report</span>
+                  <h2 className="text-xl font-bold text-text-primary">{report.candidate_name}</h2>
+                  <p className="text-xs text-text-muted">{report.job_title}</p>
                 </div>
-                <h2 className="text-xl font-bold text-text-primary">{report.candidate_name}</h2>
-                <p className="text-xs text-text-muted">{report.job_title}</p>
-              </div>
-              <div className="text-right">
-                <p className="text-[10px] text-text-muted">Generated</p>
-                <p className="text-xs text-text-secondary">{new Date(report.generated_at).toLocaleString()}</p>
-                <div className="flex items-center gap-2 mt-2">
-                  <button
-                    onClick={() => navigate('/candidates')}
-                    className="btn-secondary text-xs py-1 px-2.5 flex items-center gap-1"
-                  >
-                    <ArrowLeft className="w-3 h-3" /> Candidates List
-                  </button>
-                  <button
-                    onClick={() => setReport(null)}
-                    className="btn-ghost text-xs py-1 px-2 flex items-center gap-1"
-                  >
-                    <RotateCcw className="w-3 h-3" /> Select Another
-                  </button>
+                <div className="text-right">
+                  <p className="text-[10px] text-text-muted">Generated</p>
+                  <p className="text-xs text-text-secondary">
+                    {report.generated_at ? new Date(report.generated_at).toLocaleString() : 'Just now'}
+                  </p>
+                  <div className="flex items-center gap-2 mt-2">
+                    <button
+                      onClick={() => navigate('/candidates')}
+                      className="btn-secondary text-xs py-1 px-2.5 flex items-center gap-1"
+                    >
+                      <ArrowLeft className="w-3 h-3" /> Candidates List
+                    </button>
+                    <button
+                      onClick={() => setReport(null)}
+                      className="btn-ghost text-xs py-1 px-2 flex items-center gap-1"
+                    >
+                      <RotateCcw className="w-3 h-3" /> Select Another
+                    </button>
+                  </div>
                 </div>
               </div>
+              <p className="text-xs text-text-secondary leading-relaxed bg-bg-elevated border border-border-subtle rounded-lg p-3">
+                {report.overview}
+              </p>
             </div>
-            <p className="text-xs text-text-secondary leading-relaxed bg-bg-elevated border border-border-subtle rounded-lg p-3">
-              {report.overview}
-            </p>
-          </div>
 
-          {/* Evidence Summary Counters */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {[
-              { label: 'Verified Evidence', items: report.verified_areas, icon: CheckCircle2, color: 'text-status-verified', bg: 'bg-status-verified/10', border: 'border-status-verified/20' },
-              { label: 'Needs Validation', items: report.needs_validation_areas, icon: AlertTriangle, color: 'text-status-validation', bg: 'bg-status-validation/10', border: 'border-status-validation/20' },
-              { label: 'Missing Evidence', items: report.missing_areas, icon: XCircle, color: 'text-status-missing', bg: 'bg-status-missing/10', border: 'border-status-missing/20' },
-            ].map(({ label, items, icon: Icon, color, bg, border }) => (
-              <div key={label} className={clsx('card p-3 border', border, bg)}>
-                <div className="flex items-center gap-2 mb-1">
-                  <Icon className={clsx('w-4 h-4', color)} />
-                  <p className="text-xs font-semibold text-text-primary">{label}</p>
+            {/* Evidence Summary Counters */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { label: 'Verified Evidence', items: report.verified_areas || [], icon: CheckCircle2, color: 'text-status-verified', bg: 'bg-status-verified/10', border: 'border-status-verified/20' },
+                { label: 'Needs Validation', items: report.needs_validation_areas || [], icon: AlertTriangle, color: 'text-status-validation', bg: 'bg-status-validation/10', border: 'border-status-validation/20' },
+                { label: 'Missing Evidence', items: report.missing_areas || [], icon: XCircle, color: 'text-status-missing', bg: 'bg-status-missing/10', border: 'border-status-missing/20' },
+              ].map(({ label, items, icon: Icon, color, bg, border }) => (
+                <div key={label} className={clsx('card p-3 border', border, bg)}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <Icon className={clsx('w-4 h-4', color)} />
+                    <p className="text-xs font-semibold text-text-primary">{label}</p>
+                  </div>
+                  <p className={clsx('text-xl font-bold', color)}>{items.length}</p>
+                  <div className="mt-2 space-y-1">
+                    {items.slice(0, 3).map((item, ii) => {
+                      const text = typeof item === 'string' ? item : item?.requirement || 'Requirement';
+                      return (
+                        <p key={ii} className="text-[10px] text-text-secondary truncate" title={text}>
+                          • {text}
+                        </p>
+                      );
+                    })}
+                    {items.length > 3 && (
+                      <p className="text-[10px] text-text-muted">+{items.length - 3} more</p>
+                    )}
+                  </div>
                 </div>
-                <p className={clsx('text-xl font-bold', color)}>{items.length}</p>
-                <div className="mt-2 space-y-1">
-                  {items.slice(0, 3).map((item, ii) => (
-                    <p key={ii} className="text-[10px] text-text-secondary truncate">• {item}</p>
-                  ))}
-                  {items.length > 3 && (
-                    <p className="text-[10px] text-text-muted">+{items.length - 3} more</p>
+              ))}
+            </div>
+
+            {/* Key Strengths & Validation Areas */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="card p-4">
+                <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-status-verified" /> Key Strengths
+                </h3>
+                <ul className="space-y-1.5 text-xs text-text-secondary">
+                  {strengthsList.length > 0 ? (
+                    strengthsList.map((s, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-status-verified font-bold mt-0.5">•</span>
+                        <span>{typeof s === 'string' ? s : JSON.stringify(s)}</span>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-xs text-text-muted italic">Core qualifications align with candidate experience.</li>
                   )}
-                </div>
+                </ul>
               </div>
-            ))}
-          </div>
 
-          {/* Key Strengths & Validation Areas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="card p-4">
-              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-status-verified" /> Key Strengths
-              </h3>
-              <ul className="space-y-1.5 text-xs text-text-secondary">
-                {report.key_strengths.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-status-verified font-bold mt-0.5">•</span>
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="card p-4">
+                <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <AlertTriangle className="w-3.5 h-3.5 text-status-validation" /> Critical Validation Areas
+                </h3>
+                <ul className="space-y-1.5 text-xs text-text-secondary">
+                  {validationList.length > 0 ? (
+                    validationList.map((v, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-status-validation font-bold mt-0.5">•</span>
+                        <span>{typeof v === 'string' ? v : JSON.stringify(v)}</span>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-xs text-text-muted italic">No critical validation gaps identified.</li>
+                  )}
+                </ul>
+              </div>
             </div>
 
-            <div className="card p-4">
-              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <AlertTriangle className="w-3.5 h-3.5 text-status-validation" /> Critical Validation Areas
-              </h3>
-              <ul className="space-y-1.5 text-xs text-text-secondary">
-                {report.validation_areas.map((v, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-status-validation font-bold mt-0.5">•</span>
-                    <span>{v}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            {/* Interview Findings & Next Steps (if available) */}
+            {((report.interview_findings && report.interview_findings.length > 0) || (report.next_validation_steps && report.next_validation_steps.length > 0)) && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {report.interview_findings && report.interview_findings.length > 0 && (
+                  <div className="card p-4">
+                    <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <Zap className="w-3.5 h-3.5 text-accent-violet" /> Interview Findings & Insights
+                    </h3>
+                    <ul className="space-y-1.5 text-xs text-text-secondary">
+                      {report.interview_findings.map((f, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-accent-violet font-bold mt-0.5">•</span>
+                          <span>{typeof f === 'string' ? f : JSON.stringify(f)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-          {/* Human-in-the-loop Recruiter Decision */}
-          <div className="card p-5 border-accent-purple/30 bg-bg-card">
-            <div className="flex items-center gap-2 mb-2">
-              <Users className="w-4 h-4 text-accent-violet" />
-              <h3 className="text-sm font-bold text-text-primary">Recruiter Decision & Next Steps</h3>
-              <span className="ml-auto text-[10px] bg-accent-purple/10 text-accent-violet font-semibold border border-accent-purple/20 px-2 py-0.5 rounded">
-                Human Only
-              </span>
-            </div>
-            <p className="text-xs text-text-muted mb-4">
-              NAV does not make hiring decisions. This section is reserved for your professional evaluation.
-            </p>
+                {report.next_validation_steps && report.next_validation_steps.length > 0 && (
+                  <div className="card p-4">
+                    <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <RotateCcw className="w-3.5 h-3.5 text-accent-cyan" /> Recommended Validation Next Steps
+                    </h3>
+                    <ul className="space-y-1.5 text-xs text-text-secondary">
+                      {report.next_validation_steps.map((step, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-accent-cyan font-bold mt-0.5">•</span>
+                          <span>{typeof step === 'string' ? step : JSON.stringify(step)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Human-in-the-loop Recruiter Decision */}
+            <div className="card p-5 border-accent-purple/30 bg-bg-card">
+              <div className="flex items-center gap-2 mb-2">
+                <Users className="w-4 h-4 text-accent-violet" />
+                <h3 className="text-sm font-bold text-text-primary">Recruiter Decision & Next Steps</h3>
+                <span className="ml-auto text-[10px] bg-accent-purple/10 text-accent-violet font-semibold border border-accent-purple/20 px-2 py-0.5 rounded">
+                  Human Only
+                </span>
+              </div>
+              <p className="text-xs text-text-muted mb-4">
+                NAV does not make hiring decisions. This section is reserved for your professional evaluation.
+              </p>
             <div className="space-y-3">
               <div>
                 <label className="block text-xs font-medium text-text-secondary mb-1.5">Recruiter Notes</label>

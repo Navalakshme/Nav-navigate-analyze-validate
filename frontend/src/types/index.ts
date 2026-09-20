@@ -144,6 +144,8 @@ export interface RecruiterReport {
   verified_areas: RequirementMapping[];
   needs_validation_areas: RequirementMapping[];
   missing_areas: RequirementMapping[];
+  key_strengths?: string[];
+  validation_areas?: string[];
   interview_findings: string[];
   unanswered_areas: string[];
   evidence_references: EvidenceItem[];

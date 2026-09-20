@@ -42,6 +42,12 @@ RECRUITER NOTES:
 Return ONLY valid JSON:
 {{
   "overview": "3-4 sentence professional overview of the candidate's fit — objective, evidence-based, no hire/reject language",
+  "key_strengths": [
+    "Key verified capability demonstrated with solid evidence"
+  ],
+  "validation_areas": [
+    "Critical area requiring deeper validation or assessment"
+  ],
   "interview_findings": [
     "Key finding from interview evidence"
   ],
@@ -92,6 +98,13 @@ def generate_report(
 
     data = call_gemini(prompt)
 
+    # Fallback lists if model returned empty or omitted
+    default_strengths = [f"{m.requirement}: {m.reasoning[:120]}" for m in verified[:4]] or ["Core technical qualifications align with candidate experience."]
+    default_val_areas = [f"{m.requirement}: {m.missing_info or m.reasoning[:120]}" for m in (needs_val + missing)[:4]] or ["No critical validation gaps identified."]
+
+    key_strengths = data.get("key_strengths") or default_strengths
+    validation_areas = data.get("validation_areas") or default_val_areas
+
     # Collect all evidence references
     all_evidence: List[EvidenceItem] = []
     for m in candidate.requirement_mappings:
@@ -107,6 +120,8 @@ def generate_report(
         verified_areas=verified,
         needs_validation_areas=needs_val,
         missing_areas=missing,
+        key_strengths=key_strengths,
+        validation_areas=validation_areas,
         interview_findings=data.get("interview_findings", interview_findings),
         unanswered_areas=data.get("unanswered_areas", []),
         evidence_references=all_evidence[:10],

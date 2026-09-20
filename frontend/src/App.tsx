@@ -10,9 +10,12 @@ import CandidateSearch from './pages/CandidateSearch';
 import EvaluationReport from './pages/EvaluationReport';
 import AuditTrail from './pages/AuditTrail';
 
+import ErrorBoundary from './components/ErrorBoundary';
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
@@ -30,5 +33,6 @@ export default function App() {
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
+  </ErrorBoundary>
   );
 }
