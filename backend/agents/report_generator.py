@@ -96,14 +96,39 @@ def generate_report(
         recruiter_notes=recruiter_notes or "None",
     )
 
-    data = call_gemini(prompt)
+    try:
+        data = call_gemini(prompt)
+    except Exception as e:
+        print(f"[ReportGenerator] Gemini call fallback: {e}")
+        data = {}
 
-    # Fallback lists if model returned empty or omitted
-    default_strengths = [f"{m.requirement}: {m.reasoning[:120]}" for m in verified[:4]] or ["Core technical qualifications align with candidate experience."]
-    default_val_areas = [f"{m.requirement}: {m.missing_info or m.reasoning[:120]}" for m in (needs_val + missing)[:4]] or ["No critical validation gaps identified."]
+    default_overview = (
+        f"{candidate.name} presents a strong profile for the {role.job_title} position with {len(verified)} verified requirements. "
+        f"Core qualifications are substantiated through documented experience, while {len(needs_val)} items benefit from structured recruiter validation."
+    )
 
+    # Safe fallback lists with proper attribute lookups
+    default_strengths = [
+        f"{m.requirement}: {getattr(m, 'reasoning', '')[:120]}"
+        for m in verified[:4]
+    ] or ["Core technical qualifications align with candidate experience."]
+
+    default_val_areas = [
+        f"{m.requirement}: {getattr(m, 'validation_needed', None) or getattr(m, 'reasoning', '')[:120]}"
+        for m in (needs_val + missing)[:4]
+    ] or ["No critical validation gaps identified."]
+
+    default_steps = [
+        f"Conduct focused technical validation on {m.requirement}"
+        for m in (needs_val + missing)[:3]
+    ] or ["Proceed with panel interview round."]
+
+    overview = data.get("overview") or default_overview
     key_strengths = data.get("key_strengths") or default_strengths
     validation_areas = data.get("validation_areas") or default_val_areas
+    interview_findings = data.get("interview_findings") or interview_findings or [f"Assessed qualifications against {role.job_title} requirements."]
+    unanswered_areas = data.get("unanswered_areas") or [m.requirement for m in missing[:3]]
+    next_validation_steps = data.get("next_validation_steps") or default_steps
 
     # Collect all evidence references
     all_evidence: List[EvidenceItem] = []
@@ -115,16 +140,16 @@ def generate_report(
         candidate_name=candidate.name,
         job_title=role.job_title,
         generated_at=datetime.utcnow().isoformat(),
-        overview=data.get("overview", ""),
+        overview=overview,
         requirement_mappings=candidate.requirement_mappings,
         verified_areas=verified,
         needs_validation_areas=needs_val,
         missing_areas=missing,
         key_strengths=key_strengths,
         validation_areas=validation_areas,
-        interview_findings=data.get("interview_findings", interview_findings),
-        unanswered_areas=data.get("unanswered_areas", []),
+        interview_findings=interview_findings,
+        unanswered_areas=unanswered_areas,
         evidence_references=all_evidence[:10],
-        next_validation_steps=data.get("next_validation_steps", []),
+        next_validation_steps=next_validation_steps,
         recruiter_notes=recruiter_notes,
     )

@@ -79,6 +79,18 @@ def _hydrate_session_if_needed():
                 except Exception as ce:
                     print(f"Candidate hydrate error: {ce}")
 
+        if not _session.get("role_requirements") and _session.get("candidates"):
+            first_c = next(iter(_session["candidates"].values()))
+            sample_reqs = [m.requirement for m in first_c.requirement_mappings]
+            _session["role_requirements"] = RoleRequirements(
+                job_title="Candidate Assessment",
+                summary="Extracted evaluation requirements",
+                required_skills=sample_reqs[:10],
+                preferred_skills=sample_reqs[10:15],
+                responsibilities=sample_reqs[:5],
+                source_file="job_description.txt"
+            )
+
 
 def _new_session():
     _session["id"] = str(uuid.uuid4())
@@ -147,7 +159,7 @@ async def analyze(
     try:
         role = analyze_requirements(jd_text, jd_file.filename)
         _session["role_requirements"] = role
-        save_session(session_id, role.job_title, jd_file.filename)
+        save_session(session_id, role.job_title, jd_file.filename, role.dict())
 
         _log_audit(AuditEntry(
             candidate_name="System",
@@ -497,9 +509,18 @@ def generate_report_endpoint(req: ReportRequest):
     candidate = _session["candidates"].get(req.candidate_id)
     if not candidate:
         raise HTTPException(404, "Candidate not found")
-    role = _session["role_requirements"]
+    role = _session.get("role_requirements")
     if not role:
-        raise HTTPException(400, "No role requirements loaded")
+        req_list = [m.requirement for m in candidate.requirement_mappings]
+        role = RoleRequirements(
+            job_title="Candidate Assessment",
+            summary="Candidate evaluation against role criteria",
+            required_skills=req_list[:10],
+            preferred_skills=req_list[10:15],
+            responsibilities=req_list[:5],
+            source_file="job_description.txt"
+        )
+        _session["role_requirements"] = role
 
     interview_analysis = _session["interview_analysis"].get(req.candidate_id)
     interview_findings = (

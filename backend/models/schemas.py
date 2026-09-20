@@ -89,7 +89,7 @@ class CandidateProfile(BaseModel):
 class RoleRequirements(BaseModel):
     job_title: str
     company: Optional[str] = None
-    summary: str
+    summary: str = ""
     required_skills: List[str] = []
     preferred_skills: List[str] = []
     experience_requirements: List[str] = []
