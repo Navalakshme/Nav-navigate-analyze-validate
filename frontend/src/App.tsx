@@ -25,7 +25,9 @@ export default function App() {
           <Route path="search" element={<CandidateSearch />} />
           <Route path="report" element={<EvaluationReport />} />
           <Route path="audit" element={<AuditTrail />} />
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Route>
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
   );
