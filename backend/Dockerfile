@@ -16,5 +16,4 @@ COPY . .
 
 EXPOSE 8000
 
-# Start uvicorn with dynamic PORT support for Railway / Render
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["python", "main.py"]
